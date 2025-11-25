@@ -1,26 +1,68 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Theme tokens */
+:root{
+  --gold: #D4AF37;
+  --dark: #0A0A0A;
+  --soft: #F9F6EF;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* utility aliases */
+.bg-soft { background-color: var(--soft); }
+.text-dark { color: var(--dark); }
+.bg-gold { background-color: var(--gold); }
+/* Premium Typography */
+.font-title {
+  font-family: "Playfair Display", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.font-body {
+  font-family: "Inter", sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
 }
+
+/* Luxury section spacing */
+.section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* Soft gold border (for cards / lines) */
+.border-gold {
+  border-color: var(--gold);
+}
+
+/* Subtle premium shadow */
+.shadow-soft {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Photo hover luxury effect */
+.image-hover {
+  transition: 0.4s ease;
+}
+
+.image-hover:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+.fixed-drawer {
+  background: #F9F6EF !important; /* bg-soft */
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.nav-menu-open {
+  background-color: #0D1B2A !important;
+  background: #0D1B2A !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
