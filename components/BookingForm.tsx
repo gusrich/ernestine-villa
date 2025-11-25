@@ -7,7 +7,9 @@ export default function BookingForm() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("Your message has been sent. We will get back to you shortly.");
+    setStatus(
+      "Your message has been sent. We will get back to you shortly."
+    );
   };
 
   return (
@@ -54,4 +56,14 @@ export default function BookingForm() {
 
       <button
         type="submit"
-        className="mt-6 w-full bg-gol
+        className="mt-6 w-full bg-gol text-white p-3 rounded-lg hover:bg-orange-600 transition-colors"
+      >
+        Send Message
+      </button>
+
+      {status && (
+        <p className="mt-4 text-green-600 text-center font-medium">{status}</p>
+      )}
+    </form>
+  );
+}
